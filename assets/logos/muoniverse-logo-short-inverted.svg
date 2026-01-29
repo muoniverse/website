@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg18"
+   version="1.1"
+   viewBox="0 0 226.78 172.62"
+   sodipodi:docname="muoniverse-logo-short-inverted.svg"
+   width="226.78"
+   height="172.62"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs
+     id="defs2">
+    <style
+       id="style1">
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: url(#radial-gradient);
+      }
+
+      .st2 {
+        fill: #fff;
+      }
+
+      .st3 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .st4 {
+        display: none;
+      }
+
+      .st5 {
+        fill: #999b9e;
+      }
+
+      .st6 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath
+       id="clippath">
+      <path
+         class="st0"
+         d="m 1738.35,546 c 14.91,0 28.94,3.78 41.18,10.44 v 53.33 h -92.59 v 45.08 h 92.59 v 53.33 c -12.24,6.66 -26.27,10.44 -41.18,10.44 -47.67,0 -86.31,-38.64 -86.31,-86.31 0,-47.67 38.64,-86.31 86.31,-86.31 z"
+         id="path1" />
+    </clipPath>
+    <radialGradient
+       id="radial-gradient"
+       cx="1952.86"
+       cy="372.82001"
+       fx="1952.86"
+       fy="372.82001"
+       r="87.040001"
+       gradientTransform="matrix(1.58,0,0,-1.59,-1387.92,1256.59)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#c6c6c6"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#000"
+         id="stop2" />
+    </radialGradient>
+  </defs>
+  <sodipodi:namedview
+     id="namedview18"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:current-layer="svg18"
+     inkscape:cx="114.90899"
+     inkscape:cy="171.63622"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:pagecheckerboard="0"
+     inkscape:pageopacity="0.0"
+     inkscape:showpageshadow="2"
+     inkscape:window-height="723"
+     inkscape:window-maximized="0"
+     inkscape:window-width="1416"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:zoom="0.34375029"
+     pagecolor="#ffffff" />
+  <g
+     id="Front"
+     transform="translate(-1652.04,-546)">
+    <g
+       id="g17">
+      <g
+         id="g14">
+        <path
+           id="path13"
+           d="m 1738.35,546 c 14.91,0 28.94,3.78 41.18,10.44 v 53.33 h -92.59 v 45.08 h 92.59 v 53.33 c -12.24,6.66 -26.27,10.44 -41.18,10.44 -47.67,0 -86.31,-38.64 -86.31,-86.31 0,-47.67 38.64,-86.31 86.31,-86.31 z" />
+        <polygon
+           id="polygon13"
+           points="1779.52,609.77 1686.94,609.77 1686.94,654.85 1779.52,654.85 1779.52,708.18 1825.49,708.18 1825.49,654.85 1844.88,654.85 1844.88,609.77 1825.49,609.77 1825.49,556.43 1779.52,556.43 " />
+        <polygon
+           id="polygon14"
+           class="st2"
+           points="1825.49,609.77 1878.82,609.77 1878.82,654.85 1825.49,654.85 1825.49,708.18 1779.52,708.18 1779.52,708.18 1844.88,632.31 1779.52,556.43 1825.49,556.43 " />
+      </g>
+      <g
+         id="g16">
+        <path
+           id="path14"
+           d="m 1738.35,546 c 14.91,0 28.94,3.78 41.18,10.44 v 53.33 h -92.59 v 45.08 h 92.59 v 53.33 c -12.24,6.66 -26.27,10.44 -41.18,10.44 -47.67,0 -86.31,-38.64 -86.31,-86.31 0,-47.67 38.64,-86.31 86.31,-86.31 z" />
+        <g
+           class="st6"
+           clip-path="url(#clippath)"
+           id="g2">
+          <g
+             id="g15">
+            <circle
+               id="path19"
+               class="st1"
+               cx="1738.35"
+               cy="631.58002"
+               r="87.040001"
+               style="fill:url(#radial-gradient)" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

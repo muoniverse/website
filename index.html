@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Muoniverse</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background: black;
-      color: white;
-      font-family: sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muoniverse - A scientific project exploring the universe through muons. Coming soon.">
+    <title>NCCR Muoniverse</title>
+     <link rel="icon" type="image/png" href="assets/favicon.png">
+     <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+    <style>
+        /* ===== CSS Reset & Base Styles ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    h1 {
-      margin: 0;
-      padding-top: 20px;
-      text-align: center;
-      font-weight: normal;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #FAF9F5;
+            color: #000000;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ===== Main Container ===== */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -32,20 +41,812 @@
         }
 
         /* ===== Logo Section ===== */
+        .logo-section {
+            margin-bottom: 30px;
+        }
+
         .logo {
             width: 480px;
-            height: 270px;
+            /* height: 200px; */
             /* animation: pulse 3s ease-in-out infinite; */
         }
 
-        .logo-section {
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+        }
+
+        /* ===== Coming Soon ===== */
+        .coming-soon {
+            text-align: center;
             margin-bottom: 40px;
-        }    
-  </style>
+        }
+
+        .coming-soon h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #5CC93D 0%, #F6C744 50%, #2B64F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        /* ===== Description Section ===== */
+        .description {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 700px;
+        }
+
+        .description h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #F6C744;
+        }
+
+
+        .tagline {
+            font-weight: 800;
+            /* color: #5CC93D;*/
+            margin-bottom: 20px;
+            /*font-size: 1.5rem;
+            letter-spacing: 0.05em;*/
+        }
+
+        .description p {
+            font-size: 1.1rem;
+            color: #333; /*#d1d5db;*/
+            margin-bottom: 15px;
+        }
+
+        /* ===== Features Section ===== */
+        .features {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #F6C744;
+        }
+
+        .features h3 {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            /*background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);*/
+            background: linear-gradient(145deg, #f5f0e8 0%, #e8dcc8 100%);
+border: 1px solid #d4c4a8;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:nth-child(1):hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(92, 201, 61, 0.3);
+            border-color: #5CC93D;
+        }
+
+        .feature:nth-child(2):hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(246, 199, 68, 0.3);
+            border-color: #F6C744;
+        }
+
+        .feature:nth-child(3):hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(43, 100, 246, 0.3);
+            border-color: #2B64F6;
+        }
+
+        .feature:nth-child(4):hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(92, 201, 61, 0.3);
+            border-color: #5CC93D;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #3d342c;
+        }
+
+        .feature p {
+            font-size: 0.95rem;
+            color: #4a4038;
+            line-height: 1.5;
+        }
+
+
+
+        .img-box {
+            /*width: 200px; */       /* same width as the image */
+            height: 300px;       /* taller container */
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center; /* vertical + horizontal centering */
+            background-color: transparent; /* optional, default */
+        }
+
+        .img-box img {
+            width: 200px;   /* fixed width */
+            height: auto;   /* keep aspect ratio */
+            display: block;
+        }
+
+
+        /* ===== Around Pillars Section ===== */
+        .around-pillars {
+            width: 100%;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .around-pillars h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #2B64F6;
+        }
+
+        .around-pillars p {
+            font-size: 1.05rem;
+            color: #333;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        .pillars-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .pillar-item {
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            padding: 12px 24px;
+            border-radius: 25px;
+            border: 1px solid #2d2d44;
+            color: #F6C744;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .pillar-item:hover {
+            background: linear-gradient(135deg, #2B64F6 0%, #5CC93D 100%);
+            color: #ffffff;
+            transform: scale(1.05);
+            border-color: transparent;
+        }
+
+        /* ===== Stay Updated Section ===== */
+        .stay-updated {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .stay-updated h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #5CC93D;
+        }
+
+        .stay-updated > p {
+            font-size: 1.1rem;
+            color: #d1d5db;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            border: 1px solid #2d2d44;
+            color: #F6C744;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #5CC93D 0%, #2B64F6 100%);
+            color: #ffffff;
+            transform: scale(1.1);
+            border-color: transparent;
+        }
+
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            margin-top: auto;
+            padding-top: 40px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: #999999;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .logo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .coming-soon h1 {
+                font-size: 2rem;
+                letter-spacing: 0.15em;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .description p {
+                font-size: 1rem;
+            }
+
+            .features h2,
+            .stay-updated h2,
+            .around-pillars h2 {
+                font-size: 1.5rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .coming-soon h1 {
+                font-size: 1.5rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* ===== Partners Carousel Section ===== */
+        .partners-carousel {
+            width: 100%;
+            margin-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .partners-carousel h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #5CC93D;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            max-width: 100%;
+            margin: 10px;
+            position: relative;
+        }
+
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 30px;
+            animation: scroll 30s linear infinite;
+        }
+
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        .carousel-track.manual-scroll {
+            animation: none;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .partner-logo {
+            flex-shrink: 0;
+            width: 180px;
+            height: 180px;
+            background: #ffffff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .partner-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(92, 201, 61, 0.3);
+        }
+
+        .logo-placeholder {
+            color: #333;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Carousel Buttons */
+        .carousel-button {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            border: 1px solid #2d2d44;
+            color: #5CC93D;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background: linear-gradient(135deg, #5CC93D 0%, #2B64F6 100%);
+            color: #ffffff;
+            transform: scale(1.1);
+            border-color: transparent;
+        }
+
+        .carousel-button:active {
+            transform: scale(0.95);
+        }
+
+        .carousel-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* When you add actual images, use this style instead */
+        .partner-logo img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .partner-logo {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .carousel-track {
+                gap: 20px;
+            }
+            
+            .carousel-button {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .carousel-wrapper {
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-button {
+                display: none;
+            }
+        }
+    </style>
+
+
+<script>
+// Carousel manual scroll functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.carousel-track');
+    const leftButton = document.querySelector('.carousel-button-left');
+    const rightButton = document.querySelector('.carousel-button-right');
+    
+    if (!track || !leftButton || !rightButton) return;
+    
+    let scrollAmount = 0;
+    const scrollStep = 210; // width of logo (180px) + gap (30px)
+    let isAutoScrolling = true;
+    let inactivityTimer;
+    
+    function manualScroll(direction) {
+        // Stop auto-scroll when manually scrolling
+        if (isAutoScrolling) {
+            track.classList.add('manual-scroll');
+            isAutoScrolling = false;
+        }
+        
+        if (direction === 'left') {
+            scrollAmount -= scrollStep;
+        } else {
+            scrollAmount += scrollStep;
+        }
+        
+        // Reset position for infinite scroll effect
+        const maxScroll = track.scrollWidth;
+        if (Math.abs(scrollAmount) >= maxScroll) {
+            scrollAmount = 0;
+        } else if (scrollAmount > 0) {
+            scrollAmount = -maxScroll + scrollStep;
+        }
+        
+        track.style.transform = `translateX(${scrollAmount}px)`;
+        track.style.transition = 'transform 0.5s ease';
+        
+        resetInactivityTimer();
+    }
+    
+    function resetInactivityTimer() {
+        clearTimeout(inactivityTimer);
+        inactivityTimer = setTimeout(() => {
+            track.classList.remove('manual-scroll');
+            track.style.transition = '';
+            track.style.transform = '';
+            scrollAmount = 0;
+            isAutoScrolling = true;
+        }, 10000); // Resume after 10 seconds of no interaction
+    }
+    
+    // It is more intutitive for me to swap actions for left/right
+    leftButton.addEventListener('click', () => manualScroll('right'));
+    rightButton.addEventListener('click', () => manualScroll('left'));
+});
+</script>
 </head>
 <body>
-      <main class="container">
-        Muoniverse
-       </main>
+    <main class="container">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <img src="assets/logos/muoniverse-logo-long-trimmed.svg" alt="Muoniverse Logo" class="logo">
+        </div>
+
+        <!-- Coming Soon Message -->
+        <div class="coming-soon">
+            <h1>Coming soon</h1>
+        </div>
+
+        <!-- Project Description -->
+        <section class="description">
+            <div>
+            <h2>Unveiling a new universe through muons</h2>
+            <p>
+            Muoniverse is a new Swiss National Centre of Competence in Research (NCCR), a major initiative that uses muons (heavy cousins of electrons) to explore the hidden structures of materials in completely non-destructive ways. </p>
+            <p>Building on the world-leading muon facility at the <a href="https://www.psi.ch" target="_blank">Paul Scherrer Institute PSI</a>, the project unites universities, industry, and museums to push advances in fields ranging from quantum technologies and renewable energy to archaeology and cultural heritage.
+            </p>
+            <p>
+            By connecting science, engineering, and the arts, Muoniverse will develop new methods, train the next generation of researchers, and create unique opportunities for the public to engage with cutting-edge research.
+            </p>
+            <p class="tagline">Stay tuned as we open the door to this new "Muoniverse"!</p>
+            </div>
+        </section>
+
+
+        <section class="description">
+            <h2>Job openings</h2>
+            <p>
+            Opportunities for students and postdoctoral fellows and other job offerings will be posted here shortly.
+            </p>
+        </section>
+
+         <section class="features">
+            <h2 style="margin-bottom: 10px;">What muons are</h2>
+            <h3>Muoniverse is all about exploiting the powers of muons</h3>
+            <div class="feature-grid">
+                <div class="feature">
+                    <span class="feature-icon">⚛️</span>
+                    <h3>What are muons?</h3>
+                    <p>Muons (μ<sup>+</sup>, μ<sup>-</sup>) are similar to electrons but ~200 times more massive</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">⏱️</span>
+                    <h3>Are muons stable?</h3>
+                    <p>Muons are unstable, decay with 2 μs lifetime and emit characteristic X-rays</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🏭</span>
+                    <h3>How are they produced?</h3>
+                    <p>Muons are produced naturally, as well as artificially to probe properties of materials</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🇨🇭</span>
+                    <h3>Where are they produced?</h3>
+                    <p>Switzerland operates one of the world-leading muon beam facilities at <a href="https://www.psi.ch" target="_blank">PSI, Switzerland</a></p>
+                </div>
+            </div>
+        </section>
+
+
+         <section class="features">
+            <h2>Muoniverse: key takeaways</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <span class="img-box"><img src="assets/takeaways/1.png"></span>
+                    <h3>What we use</h3>
+                    <p>Muons are powerful and established
+probes of advanced materials and for
+high-precision particle physics</p>
+                </div>
+                <div class="feature">
+                    <span class="img-box"><img src="assets/takeaways/2.png"></span>
+                    <h3>What we deliver</h3>
+                    <p>Technological developments within
+Muoniverse will drive a step-change in muon science</p>
+                </div>
+                <div class="feature">
+                    <span class="img-box"><img src="assets/takeaways/3.png"></span>
+                    <h3>What we enable</h3>
+                    <p>This step-change will open up the power of muons to new scientific domains and applications</p>
+                </div>
+                <div class="feature">
+                    <span class="img-box"><img src="assets/logos/muoniverse-logo-short.svg" style="width: 100px;"></span>
+                    <h3>Overarching goal</h3>
+                    <p>Muoniverse will drive a coherent, multi-disciplinary, cutting-edge muon science programme across a sustainable network of communities</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Features Preview -->
+        <section class="features">
+            <h2>What we are building</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <span class="feature-icon">🔬</span>
+                    <h3>Research</h3>
+                    <p style="font-weight: bold;">Cutting-edge discoveries powered by muons</p>
+                    <p>&nbsp;</p>
+                    <p>Advancing fundamental and applied science, from quantum materials to cultural heritage, using Switzerland's world-leading muon capabilities</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🧰</span>
+                    <h3>Technology</h3>
+                    <p style="font-weight: bold;">New tools, methods, and open data for everyone</p>
+                    <p>&nbsp;</p>
+                    <p>Developing advanced instruments, shared datasets, and analysis platforms that expand what muon science can achieve</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🌐</span>
+                    <h3>Community</h3>
+                    <p style="font-weight: bold;">Uniting scientists, engineers, and museums</p>
+                    <p>&nbsp;</p>
+                    <p>Building a vibrant network across disciplines and institutions in Switzerland and around the world</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📚</span>
+                    <h3>Engagement</h3>
+                    <p style="font-weight: bold;">Training, education, and public outreach</p>
+                    <p>&nbsp;</p>
+                    <p>Empowering the next generation and bringing the wonders of muon science to schools, museums, and society</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Muoniverse Pillars Section -->
+        <section class="features">
+            <h2>Muoniverse research programme</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <span class="feature-icon">🔬</span>
+                    <h3>Research Area Technology</h3>
+                    <p>Developing next-generation muon instruments and theory, from microbeams and advanced detectors to high-pressure environments and predictive simulations, pushing the technological limits to enable entirely new muon experiments</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon"><img src="assets/icons/atom.svg" style="width: 40px;"></span>
+                    <h3>Research Area Fundamental</h3>
+                    <p>Uncover the hidden magnetic, electronic, and subatomic structure of matter, exploring how nature works, from exotic quantum states to the limits of the Standard Model</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🔋</span>
+                    <h3>Research Area Application</h3>
+                    <p>Using muons as non-destructive probes to drive advances in semiconductors, batteries, archaeology, and large-scale structure monitoring, opening muon science to new communities and applications</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🌍</span>
+                    <h3>Theory Network</h3>
+                    <p>Bringing leading theorists to Switzerland to support Muoniverse projects through long-term visits that strengthen research, collaboration and training across the entire programme</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Around the Pillars -->
+        <section class="around-pillars">
+            <h2>Building a comprehensive ecosystem</h2>
+            <p>
+                Muoniverse is creating a vibrant ecosystem that connects 
+                science with society through innovation, collaboration, and accessibility
+            </p>
+            <div class="pillars-list">
+                <span class="pillar-item">Innovation Platform</span>
+                <span class="pillar-item">Museum Platform</span>
+                <span class="pillar-item">Artists in Labs</span>
+                <span class="pillar-item">DEI Measures</span>
+                <span class="pillar-item">Training Platform</span>
+                <span class="pillar-item">Open Science & Data</span>
+            </div>
+        </section>
+
+        <!-- Partners/Institutions Carousel Section -->
+        <section class="partners-carousel">
+            <h2>Our partners</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-button carousel-button-left" aria-label="Scroll left">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/ail.jpg"></div></div>
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/augustaraurica.png"></div></div>
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/cern.jpg"></div></div>
+                        <!-- <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/chiba.jpg"></div></div> -->
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/empa.png"></div></div>
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/epfl.png"></div></div>
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/ethz.png"></div></div>
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/geneve.png"></div></div>
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/hdk.png"></div></div>
+                        <!-- <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/heidelberg.png"></div></div> -->
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/hslu.png"></div></div>
+                        <!-- <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/infn.png"></div></div> -->
+                        <!-- <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/konstanz.svg"></div></div> -->
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/psi.png"></div></div>
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/sammlungszentrum.jpg"></div></div>
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/slf.png"></div></div>
+                        <!-- <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/sunyatsen.png"></div></div> -->
+                        <!-- <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/tue.png"></div></div> -->
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/ub.png"></div></div>
+                        <!-- <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/unifi.jpg"></div></div> -->
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/unifr.png"></div></div>
+                        <!-- <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/unipi.png"></div></div> -->
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/uzh.png"></div></div>
+                        <div class="partner-logo"><div class="logo-placeholder"><img src="assets/logos/institutions/wsl.png"></div></div>
+                    </div>
+                </div>
+                <button class="carousel-button carousel-button-right" aria-label="Scroll right">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+
+        <!-- Stay Updated Section -->
+
+
+        <!--<section class="stay-updated">
+            <h2>Stay updated</h2>
+            <p>Be the first to know when we start. Follow our progress and join the Muoniverse community!</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/muoniverse/about/" class="social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/muoniverse" class="social-link" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+
+                <a href="https://x.com/muoniverse" class="social-link" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+
+            <a href="http://muoniverse.bsky.social/" class="social-link" aria-label="Bluesky">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.038.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.018.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/>
+                </svg>
+            </a>-->
+            <!--<a href="https://instagram.com/muoniverse" class="social-link" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+                </svg>
+            </a>
+            <a href="https://facebook.com/muoniverse" class="social-link" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+            </a>-->
+ 
+
+
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 NCCR Muoniverse. All rights reserved.</p>
+            <p>&nbsp;</p>
+            <p><a href="https://www.snf.ch/en" target="_blank"><img src="assets/logos/SNF_logo_standard_web_color_pos_e.svg" height="40px;"></a></p>
+            <p>The National Centres of Competence in Research (NCCRs) are a funding scheme of the Swiss National Science Foundation</p>
+        </footer>
+    </main>
 </body>
 </html>

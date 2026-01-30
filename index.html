@@ -514,6 +514,37 @@ border: 1px solid #d4c4a8;
                 display: none;
             }
         }
+
+    .links-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem 2rem;
+        margin-top: 1.5rem;
+    }
+
+    .links-container a {
+        text-decoration: none;
+        color: #0066cc;
+        padding: 0.5rem 1rem;
+        transition: color 0.2s;
+        text-align: center;
+        min-width: 200px;
+    }
+
+    .links-container a:hover {
+        color: #0052a3;
+        text-decoration: underline;
+    }
+
+    /* For very small screens, stack the links */
+    @media (max-width: 600px) {
+        .links-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
     </style>
 
 
@@ -599,6 +630,12 @@ document.addEventListener('DOMContentLoaded', function() {
             By connecting science, engineering, and the arts, Muoniverse will develop new methods, train the next generation of researchers, and create unique opportunities for the public to engage with cutting-edge research.
             </p>
             <p class="tagline">Stay tuned as we open the door to this new "Muoniverse"!</p>
+            
+            <div class="links-container">
+            <a href="https://www.wbf.admin.ch/en/newnsb/JEYzIEzRw1QFKXIpHWlxC" target="_blank">Federal Press Release</a>
+            <a href="https://www.sbfi.admin.ch/dam/en/sd-web/mpJ7DphYXX-H/NFS_Muoniverse_EN.pdf" target="_blank">NCCR Muoniverse Factsheet</a>
+            <a href="https://www.psi.ch/en/news/media-releases/muons-receive-funding-from-the-swiss-national-science-foundation" target="_blank">PSI Press Release</a>
+        </div>
             </div>
         </section>
 

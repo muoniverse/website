@@ -545,6 +545,126 @@ border: 1px solid #d4c4a8;
         }
     }
 
+
+
+        /* ===== Table Styles ===== */
+        table {
+            width: 100%;
+            max-width: 900px;
+            font-size: 0.9rem;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: linear-gradient(145deg, #f5f0e8 0%, #e8dcc8 100%);
+            border: 1px solid #d4c4a8;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        th {
+            background: #dcb268;
+            color: #ffffff;
+            padding: 8px 6px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Column widths */
+        th:nth-child(1), td:nth-child(1) { /* Role */
+            width: 15%;
+        }
+        th:nth-child(2), td:nth-child(2) { /* Location */
+            width: 25%;
+        }
+        th:nth-child(3), td:nth-child(3) { /* Position Title */
+            width: 48%;
+        }
+        th:nth-child(4), td:nth-child(4) { /* Apply */
+            width: 12%;
+            text-align: center;
+        }
+
+        td {
+            padding: 8px 6px;
+            border-bottom: 1px solid #d4c4a8;
+            color: #3d342c;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: linear-gradient(145deg, #ffffff 0%, #f5f0e8 100%);
+            transform: translateX(2px);
+        }
+
+        .role {
+            font-weight: 600;
+            /* color: #2B64F6; */
+        }
+
+        .location {
+            color: #4a4038;
+            font-style: italic;
+        }
+
+        /* ===== Apply Button ===== */
+        .apply-link {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #2B64F6;/*linear-gradient(135deg, #2B64F6 0%, #5CC93D 100%);*/
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .apply-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(43, 100, 246, 0.4);
+            background: linear-gradient(135deg, #5CC93D 0%, #2B64F6 100%);
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 6px 4px;
+            }
+
+            /* Stack on mobile */
+            th:nth-child(1), td:nth-child(1) { width: 20%; }
+            th:nth-child(2), td:nth-child(2) { width: 25%; }
+            th:nth-child(3), td:nth-child(3) { width: 40%; }
+            th:nth-child(4), td:nth-child(4) { width: 15%; }
+        }
+
+        @media (max-width: 480px) {
+            .apply-link {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+        }
+
     </style>
 
 
@@ -642,9 +762,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <section class="description">
             <h2>Job openings</h2>
-            <p>
-            Opportunities for students and postdoctoral fellows and other job offerings will be posted here shortly.
-            </p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Location</th>
+                        <th>Position</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">ETH Zurich</td>
+                        <td>Atomistic simulations of μSR spectroscopy experiments including quantum effects</td>
+                        <td><a href="#" class="apply-link">Apply</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">Postdoc</td>
+                        <td class="location">University of Zürich UZH</td>
+                        <td>Snow-coverage monitoring with cosmic muons</td>
+                        <td><a href="#" class="apply-link">Apply</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">Postdoc/Software Engineer</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td>Design of a secure data sharing portal for muon data</td>
+                        <td><a href="#" class="apply-link">Apply</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
         </section>
 
          <section class="features">

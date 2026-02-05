@@ -5,6 +5,7 @@ Script to convert muoniverse job openings Excel file to HTML table code.
 Usage: python3 excel_to_html.py input.xlsx > output.html
 """
 
+import datetime
 import pandas as pd
 import sys
 
@@ -26,10 +27,11 @@ def generate_html_table(excel_file):
     #     df = df[df['is an example'] != True]
     
     # Keep only the columns we need
-    df = df[['Role', 'Location', 'Position', 'Link']]
+    COLUMNS = ['Role', 'Location', 'Responsible PI', 'Position', 'Link', 'Deadline']
     
-    # Drop rows where essential fields are missing
-    df = df.dropna(subset=['Role', 'Location', 'Position', 'Link'])
+    df = df[COLUMNS]
+    ## Drop rows where essential fields are missing
+    ##df = df.dropna(subset=COLUMNS)
     
     # Start building the HTML
     html = []
@@ -38,6 +40,7 @@ def generate_html_table(excel_file):
     html.append('                    <tr>')
     html.append('                        <th>Role</th>')
     html.append('                        <th>Location</th>')
+    html.append('                        <th>Main PI(s)</th>')
     html.append('                        <th>Position</th>')
     html.append('                        <th></th>')
     html.append('                    </tr>')
@@ -46,13 +49,22 @@ def generate_html_table(excel_file):
     
     # Add each row
     for _, row in df.iterrows():
-        html.append('                    <tr>')
-        html.append(f'                        <td class="role">{row["Role"]}</td>')
-        html.append(f'                        <td class="location">{row["Location"]}</td>')
-        html.append(f'                        <td>{row["Position"]}</td>')
-        html.append(f'                        <td><a href="{row["Link"]}" target="_blank" class="apply-link">Apply</a></td>')
-        html.append('                    </tr>')
-    
+        has_deadline = not pd.isna(row['Deadline'])
+        if not has_deadline or row['Deadline'] > datetime.datetime.now():
+            html.append('                    <tr>')
+            html.append(f'                        <td class="role">{row["Role"]}</td>')
+            html.append(f'                        <td class="location">{row["Location"]}</td>')
+            html.append(f'                        <td class="location">{row["Responsible PI"]}</td>')
+            html.append(f'                        <td>{row["Position"]}</td>')
+            if pd.isna(row["Link"]):
+                html.append(f'                        <td><a href="#" class="apply-link-disabled">Opening soon</a></td>')
+            else:
+                html.append(f'                        <td><a href="{row["Link"]}" target="_blank" class="apply-link">Info &amp; apply</a></td>')
+                
+            html.append('                    </tr>')
+        else:
+            print(f"# Skipping {row['Role']} at {row['Location']} ({row['Position']})", file=sys.stderr)
+
     html.append('                </tbody>')
     html.append('            </table>')
     

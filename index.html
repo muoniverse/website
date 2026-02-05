@@ -137,6 +137,26 @@
             color: #333;
         }
 
+        .job-openings {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+
+        .job-openings h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #F6C744;
+        }
+
+        .job-openings h3 {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -550,7 +570,7 @@ border: 1px solid #d4c4a8;
         /* ===== Table Styles ===== */
         table {
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px;
             font-size: 0.9rem;
             margin: 0 auto;
             border-collapse: collapse;
@@ -577,13 +597,16 @@ border: 1px solid #d4c4a8;
             width: 15%;
         }
         th:nth-child(2), td:nth-child(2) { /* Location */
-            width: 25%;
+            width: 15%;
         }
         th:nth-child(3), td:nth-child(3) { /* Position Title */
-            width: 48%;
+            width: 15%;
         }
-        th:nth-child(4), td:nth-child(4) { /* Apply */
-            width: 12%;
+        th:nth-child(4), td:nth-child(4) { /* Position Title */
+            width: 40%;
+        }
+        th:nth-child(5), td:nth-child(5) { /* Apply */
+            width: 15%;
             text-align: center;
         }
 
@@ -619,7 +642,8 @@ border: 1px solid #d4c4a8;
         /* ===== Apply Button ===== */
         .apply-link {
             display: inline-block;
-            padding: 8px 20px;
+            padding: 8px 8px;
+            min-width: 80px;
             background: #2B64F6;/*linear-gradient(135deg, #2B64F6 0%, #5CC93D 100%);*/
             color: #ffffff;
             text-decoration: none;
@@ -634,6 +658,20 @@ border: 1px solid #d4c4a8;
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgba(43, 100, 246, 0.4);
             background: linear-gradient(135deg, #5CC93D 0%, #2B64F6 100%);
+        }
+
+        .apply-link-disabled {
+            display: inline-block;
+            padding: 8px 8px;
+            min-width: 80px;
+            background: #afafaf;/*linear-gradient(135deg, #2B64F6 0%, #5CC93D 100%);*/
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
         }
 
         /* ===== Responsive Design ===== */
@@ -760,7 +798,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </section>
 
 
-        <section class="description">
+        <section class="job-openings">
             <h2>Job openings</h2>
             
             <table>
@@ -768,28 +806,25 @@ document.addEventListener('DOMContentLoaded', function() {
                     <tr>
                         <th>Role</th>
                         <th>Location</th>
+                        <th>Main PI(s)</th>
                         <th>Position</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="role">PhD Student</td>
-                        <td class="location">ETH Zurich</td>
-                        <td>Atomistic simulations of μSR spectroscopy experiments including quantum effects</td>
-                        <td><a href="https://jobs.ethz.ch/job/view/JOPG_ethz_Hcey2SI" target="_blank" class="apply-link">Apply</a></td>
-                    </tr>
-                    <tr>
-                        <td class="role">Postdoc</td>
-                        <td class="location">University of Zürich UZH</td>
-                        <td>Snow-coverage monitoring with cosmic muons</td>
-                        <td><a href="https://jobs.uzh.ch/job-vacancies/postdoctoral-fellow-in-snow-with-muons/2967a2b2cd92a0ef" target="_blank" class="apply-link">Apply</a></td>
-                    </tr>
-                    <tr>
                         <td class="role">Postdoc/Software Engineer</td>
                         <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Giovanni Pizzi</td>
                         <td>Design of a secure data sharing portal for muon data</td>
-                        <td><a href="https://www.psi.ch/en/hr/job-opportunities/92729-postdoctoral-data-sharing-portal" target="_blank" class="apply-link">Apply</a></td>
+                        <td><a href="https://www.psi.ch/en/hr/job-opportunities/92729-postdoctoral-data-sharing-portal" target="_blank" class="apply-link">Info &amp; apply</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Giovanni Pizzi (PSI), Nicola Spaldin (ETHZ)</td>
+                        <td>Quantum-mechanical simulations of muons in materials</td>
+                        <td><a href="#" class="apply-link-disabled">Opening soon</a></td>
                     </tr>
                 </tbody>
             </table>

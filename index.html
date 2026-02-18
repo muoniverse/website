@@ -157,6 +157,12 @@
         }
 
 
+        .job-openings p {
+            font-size: 1.1rem;
+            color: #333; /*#d1d5db;*/
+            margin-bottom: 15px;
+        }
+
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -639,11 +645,15 @@ border: 1px solid #d4c4a8;
             font-style: italic;
         }
 
+        .position {
+            font-weight: 600;
+            /* color: #2B64F6; */
+        }
         /* ===== Apply Button ===== */
         .apply-link {
             display: inline-block;
             padding: 8px 8px;
-            min-width: 80px;
+            min-width: 110px;
             background: #2B64F6;/*linear-gradient(135deg, #2B64F6 0%, #5CC93D 100%);*/
             color: #ffffff;
             text-decoration: none;
@@ -801,8 +811,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <section class="job-openings">
             <h2>Job openings</h2>
+
+            <p style="text-align: center;">Opportunities for students, postdoctoral fellows and other job offerings will regularly appear here.<br>Once a position is open for applications, the corresponding "Apply" button will become active.</p>
             
-            <table>
+             <table>
                 <thead>
                     <tr>
                         <th>Role</th>
@@ -814,18 +826,158 @@ document.addEventListener('DOMContentLoaded', function() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="role">Postdoc/Software Engineer</td>
+                        <td class="role">PhD Student</td>
                         <td class="location">Paul Scherrer Institute PSI</td>
-                        <td class="location">Giovanni Pizzi</td>
-                        <td>Design of a secure data sharing portal for muon data</td>
-                        <td><a href="https://www.psi.ch/en/hr/job-opportunities/92729-postdoctoral-data-sharing-portal" target="_blank" class="apply-link">Info &amp; apply</a></td>
+                        <td class="location">Giovanni Pizzi (PSI), Nicola Spaldin (ETHZ)</td>
+                        <td class="position">Quantum-mechanical simulations of muons in materials</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">Empa</td>
+                        <td class="location">Arndt Remhof</td>
+                        <td class="position">Muon spectroscopy for battery applications</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">Postdoc</td>
+                        <td class="location">University of Fribourg</td>
+                        <td class="location">Christian Bernhard</td>
+                        <td class="position">Low-energy muon spin rotation studies of magnetic and superconducting oxide heterostructures</td>
+                        <td><a href="https://www.unifr.ch/phys/en/department/jobs/" target="_blank" class="apply-link">Info &amp; apply</a></td>
                     </tr>
                     <tr>
                         <td class="role">PhD Student</td>
                         <td class="location">Paul Scherrer Institute PSI</td>
-                        <td class="location">Giovanni Pizzi (PSI), Nicola Spaldin (ETHZ)</td>
-                        <td>Quantum-mechanical simulations of muons in materials</td>
-                        <td><a href="#" class="apply-link-disabled">Opening soon</a></td>
+                        <td class="location">Zaher Salman</td>
+                        <td class="position">Hybrid interfaces of quantum materials</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Zaher Salman</td>
+                        <td class="position">Advanced muon spin spectroscopy</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">University of Zurich</td>
+                        <td class="location">Laura Baudis (UZH), Andreas Knecht (PSI)</td>
+                        <td class="position">Ordinary muon capture for neutrinoless double beta decay</td>
+                        <td><a href="https://www.physik.uzh.ch/en/groups/baudis/Positions.html" target="_blank" class="apply-link">Info &amp; apply</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Angela Papa (PSI)</td>
+                        <td class="position">Hunting for rare muon observables with the muEDM and Mu3e apparatus</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">Postdoc</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">H. Luetkens (PSI), M. Janoschek (PSI,UZH), R. Khansanov (PSI)</td>
+                        <td class="position">Development of μSR pressure cells for quantum materials research</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Zurab Guguchia (PSI)</td>
+                        <td class="position">Uniaxial and hydrostatic pressure studies on quantum materials </td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">EPFL</td>
+                        <td class="location">T. Pieloni (EPFL), A. Lombardi (CERN), M. Seidel (PSI,EPFL)</td>
+                        <td class="position">Acceleration of an ultra-low-emittance mu+ beam</td>
+                        <td><a href="https://careers.epfl.ch/job/Lausanne-PhD-Laboratory-of-Particle-Accelerator-Physics-%28LPAP%29/1164210555/" target="_blank" class="apply-link">Info &amp; apply</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">ETHZ</td>
+                        <td class="location">U. Grossner</td>
+                        <td class="position">Defect characterization for advanced power semiconductor devices</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">Postdoc</td>
+                        <td class="location">University of Geneva</td>
+                        <td class="location">M. Kowalska (CERN)</td>
+                        <td class="position">Upgrades to the polarisation beamline at ISOLDE-CERN for material science and magnetisation radii studies</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Zurab Guguchia</td>
+                        <td class="position">Establishing Muon Spin Fingerprints of Intrinsic Time-Reversal Symmetry-Breaking Superconducting and Normal States</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">University of Geneva</td>
+                        <td class="location">Fabian von Rohr</td>
+                        <td class="position">Advanced Synthesis Methods of Quantum Materials</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">University of Zürich</td>
+                        <td class="location">Fabian Naterrer</td>
+                        <td class="position">Hunting for hints for time-reversal symmetry-breaking superconductivity in Josephosn Junction STM</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Aldo Antognini</td>
+                        <td class="position">Development of a micro-beam of positive muons for particle, atomic and solid state physics</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">Postdoc</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Aldo Antognini</td>
+                        <td class="position">Development of a micro-beam of positive muons for particle, atomic and solid state physics</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">Postdoc</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Aldo Antognini (PSI), Anna Soter (ETHZ)</td>
+                        <td class="position">Development of a laser system (thin-disk laser followed by OPO) for pump and probe muSR studies</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">PhD Student</td>
+                        <td class="location">Paul Scherrer Institut PSI / SNM</td>
+                        <td class="location">Michael Heiss</td>
+                        <td class="position">Non-destructive elemental analysis of archaeological and cultural heritage artefacts</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">Postdoc</td>
+                        <td class="location">Swiss National Museum SNM / PSI</td>
+                        <td class="location">Katharina Schmidt-Ott</td>
+                        <td class="position">Non-destructive elemental analysis of archaeological and cultural heritage artefacts</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">Postdoc</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Klaus Kirch</td>
+                        <td class="position">Muon beams and fundamental atomic, nuclear and particle physics </td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
+                    </tr>
+                    <tr>
+                        <td class="role">Postdoc/Software Engineer</td>
+                        <td class="location">Paul Scherrer Institute PSI</td>
+                        <td class="location">Giovanni Pizzi</td>
+                        <td class="position">Design of a secure data sharing portal for muon data</td>
+                        <td><a class="apply-link-disabled">Opening soon</a></td>
                     </tr>
                 </tbody>
             </table>

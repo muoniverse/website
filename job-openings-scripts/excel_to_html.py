@@ -55,9 +55,9 @@ def generate_html_table(excel_file):
             html.append(f'                        <td class="role">{row["Role"]}</td>')
             html.append(f'                        <td class="location">{row["Location"]}</td>')
             html.append(f'                        <td class="location">{row["Responsible PI"]}</td>')
-            html.append(f'                        <td>{row["Position"]}</td>')
+            html.append(f'                        <td class="position">{row["Position"]}</td>')
             if pd.isna(row["Link"]):
-                html.append(f'                        <td><a href="#" class="apply-link-disabled">Opening soon</a></td>')
+                html.append(f'                        <td><a class="apply-link-disabled">Opening soon</a></td>')
             else:
                 html.append(f'                        <td><a href="{row["Link"]}" target="_blank" class="apply-link">Info &amp; apply</a></td>')
                 

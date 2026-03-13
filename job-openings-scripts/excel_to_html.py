@@ -6,6 +6,7 @@ Usage: python3 excel_to_html.py input.xlsx > output.html
 """
 
 import datetime
+import os
 import pandas as pd
 import sys
 
@@ -78,10 +79,36 @@ if __name__ == '__main__':
     
     try:
         html_output = generate_html_table(excel_file)
-        print(html_output)
     except FileNotFoundError:
         print(f"Error: File '{excel_file}' not found.", file=sys.stderr)
         sys.exit(1)
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
+
+    # Get the "index.html" file in the parent folder of this script
+    html_file = os.path.join(os.path.dirname(__file__), "..", "index.html")
+    # Search for the markers in the HTML file and replace the content between them with the generated HTML
+    with open(html_file, "r") as f:
+        html_content = f.read()
+    start_marker = "<!-- start-job-table -->"
+    end_marker = "<!-- end-job-table -->"
+    start_index = html_content.find(start_marker)
+    end_index = html_content.find(end_marker)
+    if start_index == -1 or end_index == -1:
+        print("Error: Markers not found in HTML file.", file=sys.stderr)
+        sys.exit(1)
+
+    # Check that there are no duplicate markers
+    if html_content.count(start_marker) > 1 or html_content.count(end_marker) > 1:
+        print("Error: Duplicate markers found in HTML file.", file=sys.stderr)
+        sys.exit(1)
+    new_html_content = html_content[:start_index + len(start_marker)] + "\n"
+    new_html_content += html_output + "\n"
+    new_html_content += html_content[end_index:]
+    with open(html_file, "w") as f:
+        f.write(new_html_content)
+    # print(html_output)
+
+    print("HTML table generated and inserted into index.html successfully.", file=sys.stderr)
+    print("Run   python -m http.server   in the parent folder to serve the website locally, then open http://localhost:8000 in your browser.", file=sys.stderr)

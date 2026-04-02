@@ -2,10 +2,11 @@
 """
 Script to convert muoniverse job openings Excel file to HTML table code.
 
-Usage: python3 excel_to_html.py input.xlsx > output.html
+Usage: python3 excel_to_html.py [input.xlsx]
 """
 
 import datetime
+from html import escape
 import os
 import pandas as pd
 import sys
@@ -13,27 +14,32 @@ import sys
 def generate_html_table(excel_file):
     """
     Read Excel file and generate HTML table code.
-    
+
     Args:
         excel_file: Path to the Excel file
-    
+
     Returns:
         HTML table string
     """
     # Read the Excel file
     df = pd.read_excel(excel_file)
-    
+
+    def safe_text(value):
+        if pd.isna(value):
+            return ""
+        return escape(str(value), quote=True)
+
     # Note: If you want to filter out example rows, uncomment the following lines:
     # if 'is an example' in df.columns:
     #     df = df[df['is an example'] != True]
-    
+
     # Keep only the columns we need
     COLUMNS = ['Role', 'Location', 'Responsible PI', 'Position', 'Link', 'Deadline']
-    
+
     df = df[COLUMNS]
     ## Drop rows where essential fields are missing
     ##df = df.dropna(subset=COLUMNS)
-    
+
     # Start building the HTML
     html = []
     html.append('            <table>')
@@ -47,28 +53,28 @@ def generate_html_table(excel_file):
     html.append('                    </tr>')
     html.append('                </thead>')
     html.append('                <tbody>')
-    
+
     # Add each row
     for _, row in df.iterrows():
         has_deadline = not pd.isna(row['Deadline'])
         if not has_deadline or row['Deadline'] > datetime.datetime.now():
             html.append('                    <tr>')
-            html.append(f'                        <td class="role">{row["Role"]}</td>')
-            html.append(f'                        <td class="location">{row["Location"]}</td>')
-            html.append(f'                        <td class="location">{row["Responsible PI"]}</td>')
-            html.append(f'                        <td class="position">{row["Position"]}</td>')
+            html.append(f'                        <td class="role">{safe_text(row["Role"])}</td>')
+            html.append(f'                        <td class="location">{safe_text(row["Location"])}</td>')
+            html.append(f'                        <td class="location">{safe_text(row["Responsible PI"])}</td>')
+            html.append(f'                        <td class="position">{safe_text(row["Position"])}</td>')
             if pd.isna(row["Link"]):
-                html.append(f'                        <td><a class="apply-link-disabled">Opening soon</a></td>')
+                html.append('                        <td><a class="apply-link-disabled">Opening soon</a></td>')
             else:
-                html.append(f'                        <td><a href="{row["Link"]}" target="_blank" class="apply-link">Info &amp; apply</a></td>')
-                
+                html.append(f'                        <td><a href="{safe_text(row["Link"])}" target="_blank" class="apply-link">Info &amp; apply</a></td>')
+
             html.append('                    </tr>')
         else:
             print(f"# Skipping {row['Role']} at {row['Location']} ({row['Position']})", file=sys.stderr)
 
     html.append('                </tbody>')
     html.append('            </table>')
-    
+
     return '\n'.join(html)
 
 if __name__ == '__main__':
@@ -76,7 +82,7 @@ if __name__ == '__main__':
         excel_file = sys.argv[1]
     else:
         excel_file = "muoniverse-job-openings.xlsx"
-    
+
     try:
         html_output = generate_html_table(excel_file)
     except FileNotFoundError:

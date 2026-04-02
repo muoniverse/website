@@ -1,24 +1,37 @@
 # Excel to HTML Table Converter
 
-This script converts the job openings Excel file into the correct HTML table code.
+This script reads the job openings Excel file, generates the HTML table, and inserts it into the job table section of the parent [index.html](../index.html) file.
 
 ## Requirements
 
-```bash
-pip install pandas openpyxl
+```shell
+pip install -r requirements.txt
 ```
 
 ## Usage
 
-### Basic usage (output to file):
-```bash
-python3 excel_to_html.py > table_output.html
-```
-Then replace the corresponding section in the `index.html`.
+### Basic usage:
 
+```shell
+python3 excel_to_html.py
+```
+
+This uses the default input file name muoniverse-job-openings.xlsx.
+
+### Use a custom Excel file:
+
+```shell
+python3 excel_to_html.py input.xlsx
+```
+
+The script updates the content between the markers below in the parent [index.html](../index.html):
+
+- <!-- start-job-table -->
+- <!-- end-job-table -->
 
 ## Notes
 
-- Empty rows are automatically skipped, as well as rows with missing information
-- Check the code to enable/hide example columns
-- In the future, add filter to automatically hide job offerings with deadline in the past
+- Rows are shown if Deadline is empty or in the future.
+- Rows are hidden if Deadline is in the past.
+- Missing Link shows disabled text: Opening soon.
+- Example-row filtering is currently disabled in code and can be enabled by uncommenting the relevant lines.

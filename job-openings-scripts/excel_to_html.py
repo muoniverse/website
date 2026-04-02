@@ -33,10 +33,12 @@ def generate_html_table(excel_file):
     # if 'is an example' in df.columns:
     #     df = df[df['is an example'] != True]
 
-    # Keep only the columns we need
+    # Keep only the columns we need; include Comments if present for visibility filtering.
     COLUMNS = ['Role', 'Location', 'Responsible PI', 'Position', 'Link', 'Deadline']
+    optional_columns = ['Comments']
+    selected_columns = COLUMNS + [col for col in optional_columns if col in df.columns]
 
-    df = df[COLUMNS]
+    df = df[selected_columns]
     ## Drop rows where essential fields are missing
     ##df = df.dropna(subset=COLUMNS)
 
@@ -56,6 +58,19 @@ def generate_html_table(excel_file):
 
     # Add each row
     for _, row in df.iterrows():
+        comments_closed = (
+            'Comments' in row.index
+            and not pd.isna(row['Comments'])
+            and str(row['Comments']).strip().lower() == 'closed'
+        )
+
+        if comments_closed:
+            print(
+                f"# Skipping {row['Role']} at {row['Location']} ({row['Position']}) due to Comments=Closed",
+                file=sys.stderr,
+            )
+            continue
+
         has_deadline = not pd.isna(row['Deadline'])
         if not has_deadline or row['Deadline'] > datetime.datetime.now():
             html.append('                    <tr>')

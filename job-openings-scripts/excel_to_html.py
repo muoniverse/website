@@ -72,7 +72,8 @@ def generate_html_table(excel_file):
             continue
 
         has_deadline = not pd.isna(row['Deadline'])
-        if not has_deadline or row['Deadline'] > datetime.datetime.now():
+        deadline_date = pd.to_datetime(row['Deadline']).date() if has_deadline else None
+        if not has_deadline or deadline_date >= datetime.date.today():
             html.append('                    <tr>')
             html.append(f'                        <td class="role">{safe_text(row["Role"])}</td>')
             html.append(f'                        <td class="location">{safe_text(row["Location"])}</td>')

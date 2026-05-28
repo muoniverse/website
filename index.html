@@ -62,7 +62,7 @@
             }
         }
 
-        /* ===== Coming Soon ===== */
+        /* =====Coming Soon ===== */
         .coming-soon {
             text-align: center;
             margin-bottom: 40px;
@@ -78,6 +78,25 @@
             background-clip: text;
             color: transparent;
             animation: shimmer 3s ease-in-out infinite;
+        }
+
+        /* ===== Just Started ===== */
+        .just-started {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .just-started h1 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            /* letter-spacing: 0.1em; */
+            /* text-transform: uppercase; */
+            /* background: linear-gradient(135deg, #5CC93D 0%, #F6C744 50%, #2B64F6 100%); */
+            -webkit-background-clip: text;
+            background-clip: text;
+            /* color: transparent;
+            animation: shimmer 3s ease-in-out infinite; */
         }
 
         @keyframes shimmer {
@@ -106,7 +125,7 @@
         .tagline {
             font-weight: 800;
             /* color: #5CC93D;*/
-            margin-bottom: 20px;
+            margin-top: 10px;
             /*font-size: 1.5rem;
             letter-spacing: 0.05em;*/
         }
@@ -241,6 +260,21 @@
             display: block;
         }
 
+        .img-box-kickoff {
+            /*width: 200px; */
+            /* height: 300px;  */
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center; /* vertical + horizontal centering */
+            background-color: transparent; /* optional, default */
+        }
+
+        .img-box-kickoff img {
+            width: 100%;   /* fixed width */
+            height: auto;   /* keep aspect ratio */
+            display: block;
+        }
 
         /* ===== Around Pillars Section ===== */
         .around-pillars {
@@ -776,30 +810,36 @@ document.addEventListener('DOMContentLoaded', function() {
             <img src="assets/logos/muoniverse-logo-long-trimmed.svg" alt="Muoniverse Logo" class="logo">
         </div>
 
-        <!-- Coming Soon Message -->
-        <div class="coming-soon">
-            <h1>Starting soon</h1>
-        </div>
-
         <!-- Project Description -->
         <section class="description">
             <div>
-            <h2>Muons for science and society — bridging discovery and application</h2>
-            <p>
-            Muoniverse is a new Swiss National Centre of Competence in Research (NCCR), a major initiative that uses muons (heavy cousins of electrons) to explore the hidden structures of materials in completely non-destructive ways. </p>
-            <p>Building on the world-leading muon facility at the <a href="https://www.psi.ch" target="_blank">Paul Scherrer Institute PSI</a>, the project unites universities, industry, and museums to push advances in fields ranging from quantum technologies and renewable energy to archaeology and cultural heritage.
-            </p>
-            <p>
-            By connecting science, engineering, and the arts, Muoniverse will develop new methods, train the next generation of researchers, and create unique opportunities for the public to engage with cutting-edge research.
-            </p>
-            <p class="tagline">Stay tuned as we open the door to this new "Muoniverse"!</p>
-            
-            <div class="links-container">
-            <a href="https://www.wbf.admin.ch/en/newnsb/JEYzIEzRw1QFKXIpHWlxC" target="_blank">Federal Press Release</a>
-            <a href="https://www.sbfi.admin.ch/dam/en/sd-web/mpJ7DphYXX-H/NFS_Muoniverse_EN.pdf" target="_blank">NCCR Muoniverse Factsheet</a>
-            <a href="https://www.psi.ch/en/news/media-releases/muons-receive-funding-from-the-swiss-national-science-foundation" target="_blank">PSI Press Release</a>
-            <a href="https://www.news.uzh.ch/en/articles/news/2026/new-nccr.html" target="_blank">UZH Press Release</a>
-        </div>
+                <h2>Muons for science and society — bridging discovery and application</h2>
+                <p>
+                Muoniverse is a new Swiss National Centre of Competence in Research (NCCR), a major initiative that uses muons (heavy cousins of electrons) to explore the hidden structures of materials in completely non-destructive ways. </p>
+                <p>Building on the world-leading muon facility at the <a href="https://www.psi.ch" target="_blank">Paul Scherrer Institute PSI</a>, the project unites universities, industry, and museums to push advances in fields ranging from quantum technologies and renewable energy to archaeology and cultural heritage.
+                </p>
+                <p>
+                By connecting science, engineering, and the arts, Muoniverse will develop new methods, train the next generation of researchers, and create unique opportunities for the public to engage with cutting-edge research.
+                </p>                
+                <div class="links-container">
+                    <a href="https://www.wbf.admin.ch/en/newnsb/JEYzIEzRw1QFKXIpHWlxC" target="_blank">Federal Press Release</a>
+                    <a href="https://www.sbfi.admin.ch/dam/en/sd-web/mpJ7DphYXX-H/NFS_Muoniverse_EN.pdf" target="_blank">NCCR Muoniverse Factsheet</a>
+                    <a href="https://www.psi.ch/en/news/media-releases/muons-receive-funding-from-the-swiss-national-science-foundation" target="_blank">PSI Press Release</a>
+                    <a href="https://www.news.uzh.ch/en/articles/news/2026/new-nccr.html" target="_blank">UZH Press Release</a>
+                </div>
+
+                <!-- Just Started Message -->
+                <div class="just-started">
+                    <h1>Muoniverse officially started on May 1<sup>st</sup>, 2026 and kicked-off with a first meeting of the entire consortium on May 11<sup>th</sup>, 2026</h1>
+
+                <p class="tagline">Stay tuned as we open the door to this new "Muoniverse"!</p>
+
+                </div>
+
+                <!-- A div with a centered image -->
+                <div class="img-box-kickoff">
+                    <img src="assets/images/muoniverse-kickoff.jpg" alt="Muoniverse Kickoff Meeting">
+                </div>                
             </div>
         </section>
 
